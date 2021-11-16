@@ -3,7 +3,8 @@
 
 ![license](https://img.shields.io/github/license/EllaFerreira/Team-Profile-Generator)
 ![Contributor](https://img.shields.io/badge/Contributors-1-red.svg)
-![express](https://img.shields.io/badge/npm-expressJs-red.svg)
+<!-- ![express](https://img.shields.io/badge/npm-expressJs-red.svg) -->
+![Jest](https://img.shields.io/badge/AppWith-Jest-yellow.svg)
 ![Nodejs](https://img.shields.io/badge/AppWith-NodeJS-green.svg)
 ![JavaScript](https://img.shields.io/badge/AppWith-ExpressJS-green.svg)
 ![Framework](https://img.shields.io/badge/Framework-Bootstrap-yellow.svg)
