@@ -1,21 +1,22 @@
-
 # Team-Profile-Generator 👷🏻‍♂️👷🏿‍♀️ 🔴 👷🏽👷🏿‍♂️
 
 ![license](https://img.shields.io/github/license/EllaFerreira/Team-Profile-Generator)
 ![Contributor](https://img.shields.io/badge/Contributors-1-red.svg)
-<!-- ![express](https://img.shields.io/badge/npm-expressJs-red.svg) -->
-![Jest](https://img.shields.io/badge/AppWith-Jest-yellow.svg)
+![inquirer](https://img.shields.io/badge/npm-inquirer-red.svg)
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+[![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
+
 ![Nodejs](https://img.shields.io/badge/AppWith-NodeJS-green.svg)
 ![JavaScript](https://img.shields.io/badge/AppWith-ExpressJS-green.svg)
 ![Framework](https://img.shields.io/badge/Framework-Bootstrap-yellow.svg)
 
 ## About this Project
 
-Create a team profile generator able to 
+The Team Profile Generator is a app which receives data from a command-line using Node js to generate the engineering team informations and display it in a HTML page.
+
+The TDD (Test Driven Development) was implemented to ensure the quality and the maintenance of the app.
 
 ## Mock up
-
-
 
 ## Content
 
@@ -23,6 +24,8 @@ Create a team profile generator able to
 - [Acceptance Criteria](#acceptance-criteria)
 - [Technologies](#technologies)
 - [Installation](#installation)
+- [Test Instructions](#test-instructions)
+- [Sources](#sources)
 - [Project Creator](#project-creator)
 
 ## User Story
@@ -31,7 +34,6 @@ Create a team profile generator able to
 AS A manager
 I WANT to generate a webpage that displays my team's basic info
 SO THAT I have quick access to their emails and GitHub profiles
-
 ```
 
 ## Acceptance Criteria
@@ -54,7 +56,6 @@ WHEN I select the intern option
 THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
 WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
-
 ```
 
 ## Technologies
@@ -62,17 +63,32 @@ THEN I exit the application, and the HTML is generated
 - Node/Express js - backend;
 - Bootstrap - css library;
 - Jest - testing tool;
-- JavaScript.
-
+- JavaScript;
+- File System;
+- Inquirer npm.
 
 ## Installation
 
 If you want to run this locally on your machine:
 
 - Clone to your local machine from this repo
-- Type npm i on your terminal to install all dependencies
-- Type npm start to run the application
-- Go to http://localhost:3001/ to use the application
+- Open the repo in your code editor (vs code for example)
+- Open with F12 the command-line
+- Run npm install on the terminal to install the packages, when it's done
+- Also using the command-line now run node index
+- Start answering the questions, once is done you will see that a file name index.html was generated
+
+## Test Instructions
+
+- On the command-line run npm run test
+- Then see the results printed on the same screen
+- All the tests should pass to generate the profiles with success
+
+## Sources
+
+[Form Validation Js](https://www.w3resource.com/javascript/form/email-validation.php)
+[Regex Generator](https://regex-generator.olafneumann.org/?sampleText=this.id%20&flags=i&onlyPatterns=false&matchWholeLine=false&selection=)
+[Jest js](https://jestjs.io/docs/getting-started)
 
 ## Project Creator
 
