@@ -1,0 +1,45 @@
+body{
+    background-image: url('../assets/img/background.jpg');
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+a:hover{
+    text-decoration: none;
+    color: #e8630a;
+}
+.header-h2{
+    font-size: 30px;
+
+}
+.list-items{
+    font-size: 15px;
+}
+@media screen and (max-width: 1300px){
+    main {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 887px){
+    main {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 727px){
+    main {
+        width: 60%;
+    }
+    .card {
+        width: 70%!important;
+    }
+}
+
+@media screen and (max-width: 500px){
+    main {
+        width: 90%;
+    }
+    .card {
+        width: 100%!important;
+    }
+}

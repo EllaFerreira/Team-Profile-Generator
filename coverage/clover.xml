@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1637238695637" clover="3.2.0">
-  <project timestamp="1637238695637" name="All files">
-    <metrics statements="14" coveredstatements="11" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="6" elements="25" coveredelements="19" complexity="0" loc="14" ncloc="14" packages="1" files="1" classes="1"/>
+<coverage generated="1637478351338" clover="3.2.0">
+  <project timestamp="1637478351338" name="All files">
+    <metrics statements="14" coveredstatements="10" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="5" elements="25" coveredelements="17" complexity="0" loc="14" ncloc="14" packages="1" files="1" classes="1"/>
     <file name="employee.js" path="/Users/rafaelaferreira/GitLab/HomeWorks/Team_Profile_Generator/Team-Profile-Generator/lib/employee.js">
-      <metrics statements="14" coveredstatements="11" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="6"/>
+      <metrics statements="14" coveredstatements="10" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="5"/>
       <line num="3" count="7" type="stmt"/>
       <line num="4" count="7" type="stmt"/>
       <line num="5" count="7" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
+      <line num="8" count="0" type="stmt"/>
       <line num="11" count="1" type="stmt"/>
       <line num="14" count="1" type="stmt"/>
       <line num="17" count="0" type="stmt"/>
