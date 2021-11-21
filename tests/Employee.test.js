@@ -4,11 +4,13 @@ describe("Employee generator", () => {
   let employee;
 
   beforeEach(() => {
-    employee = new Employee();
+    employee = new Employee("name", "id", "email");
   });
 
-  test("email validation type true", () => {
-    expect(employee.getValidationEmail()).to(true);
+  test("email validation", () => {
+    const email = 'test@test.com.au';
+    const employee = new Employee('name', 'id', email)
+    expect(employee.getValidationEmail()).toBe(true);
   });
 
   test("id validation", () => {
@@ -16,15 +18,15 @@ describe("Employee generator", () => {
   });
 
   test("input name via constructor", () => {
-    expect(employee.name()).toBe("name");
+    expect(employee.name).toBe('name');
   });
 
   test("input id via constructor", () => {
-    expect(employee.getId()).toBe("id");
+    expect(employee.id).toBe("id");
   });
 
   test("input email via constructor", () => {
-    expect(employee.getEmail()).toBe("email");
+    expect(employee.email).toBe("email");
   });
 
   test("Data type as object", () => {
