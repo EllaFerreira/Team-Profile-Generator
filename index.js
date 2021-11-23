@@ -1,42 +1,44 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
-const Manager = require('./lib/manager');
-const Intern = require('./lib/intern');
-const Engineer = require('./lib/engineer');
+const inquirer = require("inquirer");
+const fs = require("fs");
+const Manager = require("./lib/manager");
+const Intern = require("./lib/intern");
+const Engineer = require("./lib/engineer");
 
-const generator = require('./dist/generator');
-const renderHTML = require('./dist/generator');
-const Header = [];
-const Members = [];
+
+const renderHTML = require("./dist/generator");
+const theHeader = [];
+const theTeam = [];
 
 //enter team name
 
-function teamNameIs(){
-    inquirer.prompt([
-        {
-        type: 'input',
-        message: 'Hello, please enter your Team Name!',
-        name: 'team',
+function teamNameIs() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "Hello, please enter your Team Name!",
+        name: "team",
         //validate the input
-        validate: function(input){
-            if(input === ''){
-                return 'You must enter the Team Name to begin!'
-            }
-            return true
-        }
-        }
+        validate: function (input) {
+          if (input === "") {
+            return "You must enter the Team Name to begin!";
+          }
+          return true;
+        },
+      },
     ])
-    .then (function(data){
-        const teamNameIs = data.team;
-        Header.push(teamNameIs)
-        renderWhoIsTheManager();
-    })
+    .then(function (data) {
+      const teamNameIs = data.team;
+      theHeader.push(teamNameIs);
+      renderWhoIsTheManager();
+    });
 }
 
 //manager questions
 
-function renderWhoIsTheManager(){
-    inquirer.prompt([
+function renderWhoIsTheManager() {
+  inquirer
+    .prompt([
       {
         type: "input",
         message: "Please, enter your manager's name.",
@@ -81,83 +83,83 @@ function renderWhoIsTheManager(){
         validate: function (input) {
           if (!/^\d*(\.\d+)?$/.test(input)) {
             return "Phone number cannot contain letters or symbols!";
-          } else if (input === ''){
-            return 'You must enter an office phone number!'
+          } else if (input === "") {
+            return "You must enter an office phone number!";
           }
           return true;
         },
-      }
+      },
     ])
 
-    .then (function(managerFields){
-        const {name, id, email, office} = managerFields
-        const manager = new Manager(name, id, email, office);
-        Members.push(manager);
-        addTeamMembers();
-    })
+    .then(function (managerFields) {
+      const { name, id, email, office } = managerFields;
+      const manager = new Manager(name, id, email, office);
+      theTeam.push(manager);
+      addTeamMembers();
+    });
 }
 
-//enginner 
+//enginner
 
 function renderWhoIsTheEngineer() {
-    inquirer
-      .prompt([
-        {
-          type: "input",
-          message: "Please, enter the engineer's name.",
-          name: "name",
-          //validate the input
-          validate: function (input) {
-            if (input === "") {
-              return "You must enter the engineer name!";
-            }
-            return true;
-          },
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "Please, enter the engineer's name.",
+        name: "name",
+        //validate the input
+        validate: function (input) {
+          if (input === "") {
+            return "You must enter the engineer name!";
+          }
+          return true;
         },
-        {
-          type: "input",
-          message: "What is the engineer's employee ID?",
-          name: "id",
-          //validate the input
-          validate: function (input) {
-            if (input === "") {
-              return "You must enter an ID!";
-            }
-            return true;
-          },
+      },
+      {
+        type: "input",
+        message: "What is the engineer's employee ID?",
+        name: "id",
+        //validate the input
+        validate: function (input) {
+          if (input === "") {
+            return "You must enter an ID!";
+          }
+          return true;
         },
-        {
-          type: "input",
-          message: "What is the engineer's email address?",
-          name: "email",
-          //validate the input
-          validate: function (input) {
-            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
-              return "You must enter an valid email address!";
-            }
-            return true;
-          },
+      },
+      {
+        type: "input",
+        message: "What is the engineer's email address?",
+        name: "email",
+        //validate the input
+        validate: function (input) {
+          if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
+            return "You must enter an valid email address!";
+          }
+          return true;
         },
-        {
-          type: "input",
-          message: "What is the engineer's GitHub username?",
-          name: "username",
-          //validate the input
-          validate: function (input) {
-            if (input === "") {
-              return "You must enter a GitHub username!";
-            }
-            return true;
-          },
+      },
+      {
+        type: "input",
+        message: "What is the engineer's GitHub username?",
+        name: "username",
+        //validate the input
+        validate: function (input) {
+          if (input === "") {
+            return "You must enter a GitHub username!";
+          }
+          return true;
         },
-      ])
-      .then(function (engineerFields) {
-        const { name, id, email, username } = engineerFields;
-        const engineer = new Engineer(name, id, email, username);
-        Members.push(engineer);
-        addTeamMembers();
-      });
-    }
+      },
+    ])
+    .then(function (engineerFields) {
+      const { name, id, email, username } = engineerFields;
+      const engineer = new Engineer(name, id, email, username.trim());
+      theTeam.push(engineer);
+      addTeamMembers();
+    });
+}
 
 //intern
 
@@ -216,58 +218,61 @@ function renderWhoIsTheIntern() {
     .then(function (internFields) {
       const { name, id, email, school } = internFields;
       const intern = new Intern(name, id, email, school);
-      Members.push(intern);
+      theTeam.push(intern);
       addTeamMembers();
     });
 }
 
-//adding more members 
+//adding more members
 
-function addMembers(){
-    inquirer.prompt([{
-        type: 'list',
-        message: 'Would you like to add a new member?',
-        name: 'addMember',
+function addTeamMembers() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "Would you like to add a new member?",
+        name: "addMembers",
         choices: [
-            'Yes, please add an engineer.',
-            'Yes, please add an intern.',
-            'No, my team is complete!'
-        ]
-    }])
-    .then (function(data){
-        const addMembers = data.addMember;
-        switch (addMembers) {
-          case "Yes, please add an engineer":
-            if (addMembers === "Yes, please add an engineer.") {
-              return renderWhoIsTheEngineer();
-            }
-          case "Yes, please add an intern":
-            if (addMembers === "Yes, please add an intern.") {
-              return renderWhoIsTheIntern();
-            }
-          case "No, my team is complete!":
-            if (addMembers === "No, my team is complete!") {
-              return fs.writeFile('index.html', renderHTML(Header, Members))
-            }
-        }
-    })
+          "Yes, please add an engineer.",
+          "Yes, please add an intern.",
+          "No, my team is complete!",
+        ],
+      },
+    ])
+    .then(function (data) {
+      const addTeamMembers = data.addMembers;
+      switch (addTeamMembers) {
+        case "Yes, please add an engineer.":
+          if (addTeamMembers === "Yes, please add an engineer.") {
+            return renderWhoIsTheEngineer();
+          }
+        case "Yes, please add an intern.":
+          if (addTeamMembers === "Yes, please add an intern.") {
+            return renderWhoIsTheIntern();
+          }
+        case "No, my team is complete!":
+          if (addTeamMembers === "No, my team is complete!") {
+            return writeToFile("index.html", renderHTML(theHeader, theTeam));
+          }
+      }
+    });
 }
 
 //error catch
 
-function writeFile(fileName, data){
-    fs.writeFile(fileName, data, function(error){
-        if(error){
-            return 'Sorry, something went wrong.'
-        } else {
-            return 'Your Team Profile was successfully generated!'
-        }
-    })
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, function(error) {
+    if (error) {
+      return "Sorry, something went wrong.";
+    } else {
+      return "Your Team Profile was successfully generated!";
+    }
+  });
 }
 
-function init(){
-    teamNameIs()
+function init() {
+  teamNameIs();
 }
 
-init()
+init();
 // runs the application

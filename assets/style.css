@@ -1,18 +1,22 @@
-body{
-    background-image: url('../assets/img/background.jpg');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* body{
+    background-image: url('../assets/img/background2.jpg');
     -webkit-background-size: cover;
     background-size: cover;
-}
+} */
 a:hover{
     text-decoration: none;
     color: #e8630a;
 }
-.header-h2{
+.header-h1{
     font-size: 30px;
+    
 
 }
 .list-items{
     font-size: 15px;
+    
 }
 @media screen and (max-width: 1300px){
     main {
