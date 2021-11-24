@@ -6,8 +6,8 @@ const Engineer = require("./lib/engineer");
 
 
 const renderHTML = require("./dist/generator");
-const theHeader = [];
-const theTeam = [];
+const teamHeader = [];
+const teamMembers = [];
 
 //enter team name
 
@@ -29,14 +29,14 @@ function teamNameIs() {
     ])
     .then(function (data) {
       const teamNameIs = data.team;
-      theHeader.push(teamNameIs);
-      renderWhoIsTheManager();
+      teamHeader.push(teamNameIs);
+      renderManager();
     });
 }
 
 //manager questions
 
-function renderWhoIsTheManager() {
+function renderManager() {
   inquirer
     .prompt([
       {
@@ -94,14 +94,14 @@ function renderWhoIsTheManager() {
     .then(function (managerFields) {
       const { name, id, email, office } = managerFields;
       const manager = new Manager(name, id, email, office);
-      theTeam.push(manager);
+      teamMembers.push(manager);
       addTeamMembers();
     });
 }
 
 //enginner
 
-function renderWhoIsTheEngineer() {
+function renderEngineer() {
   inquirer
     .prompt([
       {
@@ -156,14 +156,14 @@ function renderWhoIsTheEngineer() {
     .then(function (engineerFields) {
       const { name, id, email, username } = engineerFields;
       const engineer = new Engineer(name, id, email, username.trim());
-      theTeam.push(engineer);
+      teamMembers.push(engineer);
       addTeamMembers();
     });
 }
 
 //intern
 
-function renderWhoIsTheIntern() {
+function renderIntern() {
   inquirer
     .prompt([
       {
@@ -218,7 +218,7 @@ function renderWhoIsTheIntern() {
     .then(function (internFields) {
       const { name, id, email, school } = internFields;
       const intern = new Intern(name, id, email, school);
-      theTeam.push(intern);
+      teamMembers.push(intern);
       addTeamMembers();
     });
 }
@@ -244,15 +244,18 @@ function addTeamMembers() {
       switch (addTeamMembers) {
         case "Yes, please add an engineer.":
           if (addTeamMembers === "Yes, please add an engineer.") {
-            return renderWhoIsTheEngineer();
+            return renderEngineer();
           }
         case "Yes, please add an intern.":
           if (addTeamMembers === "Yes, please add an intern.") {
-            return renderWhoIsTheIntern();
+            return renderIntern();
           }
         case "No, my team is complete!":
           if (addTeamMembers === "No, my team is complete!") {
-            return writeToFile("index.html", renderHTML(theHeader, theTeam));
+            return writeToFile(
+              "index.html",
+              renderHTML(teamHeader, teamMembers)
+            );
           }
       }
     });
@@ -263,9 +266,12 @@ function addTeamMembers() {
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, function(error) {
     if (error) {
-      return "Sorry, something went wrong.";
+      return console.error(error)
     } else {
-      return "Your Team Profile was successfully generated!";
+      return console.log(
+        "\x1b[32m",
+        "\n------Your Team Profile was successfully generated!"
+      );
     }
   });
 }
