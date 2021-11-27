@@ -4,7 +4,6 @@
 ![Contributor](https://img.shields.io/badge/Contributors-1-red.svg)
 ![inquirer](https://img.shields.io/badge/npm-inquirer-red.svg)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
-[![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
 
 ![Nodejs](https://img.shields.io/badge/AppWith-NodeJS-green.svg)
 ![JavaScript](https://img.shields.io/badge/AppWith-ExpressJS-green.svg)

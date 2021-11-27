@@ -1,13 +1,15 @@
-const Employee = require('../lib/employee');
+const Employee = require("../lib/employee");
 
-describe('Employee generator', () => {
+describe("Employee generator", () => {
   let employee;
 
   beforeEach(() => {
-    employee = new Employee();
+    employee = new Employee("name", "id", "email");
   });
 
   test("email validation", () => {
+    const email = 'test@test.com.au';
+    const employee = new Employee('name', 'id', email)
     expect(employee.getValidationEmail()).toBe(true);
   });
 
@@ -16,25 +18,25 @@ describe('Employee generator', () => {
   });
 
   test("input name via constructor", () => {
-    expect(employee.getName()).toBe("name");
+    expect(employee.name).toBe('name');
   });
 
   test("input id via constructor", () => {
-    expect(employee.getId()).toBe("id");
+    expect(employee.id).toBe("id");
   });
 
-  test('input email via constructor', () => {
-      expect(employee.getEmail()).toBe('email')
-  })
+  test("input email via constructor", () => {
+    expect(employee.email).toBe("email");
+  });
 
-  test('Data type as object', () => {
-      expect(typeof(employee)).toEqual('object')
-  })
+  test("Data type as object", () => {
+    expect(typeof employee).toEqual("object");
+  });
 
-  test('If it is an object to be false', () => {
-      expect(employee).toMatchObject(employee)
-  })
-})
+  test("If it is an object to be false", () => {
+    expect(employee).toMatchObject(employee);
+  });
+});
 // test('getName() returns this.name', () =>{
 //     const param = new Employee('name', 'id', 'email')
 //     expect(param.getName()).toBe(param.name)
@@ -54,4 +56,3 @@ describe('Employee generator', () => {
 //   const param = new Employee("name", "id", "email");
 //   expect(param.getRole()).toBe("Employee");
 // })
-

@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage --watchAll --verbose"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,9 @@
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "jest": "^27.3.1"
+  },
+  "dependencies": {
+    "bulma": "^0.9.3",
+    "inquirer": "^8.2.0"
   }
 }
