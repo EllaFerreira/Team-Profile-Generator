@@ -17,6 +17,8 @@ The TDD (Test Driven Development) was implemented to ensure the quality and the 
 
 ## Mock up
 
+![Code-Demo](./assets/img/video.gif)
+
 ## Content
 
 - [User Story](#user-story)
