@@ -67,7 +67,7 @@ THEN I exit the application, and the HTML is generated
 ## Technologies
 
 - Node/Express js - backend;
-- Bootstrap - css library;
+- Bulma - css library;
 - Jest - testing tool;
 - JavaScript;
 - File System;
