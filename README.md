@@ -17,8 +17,10 @@ The TDD (Test Driven Development) was implemented to ensure the quality and the 
 
 ## Mock up
 
-![Screen Shot 2021-11-27 at 9 36 10 pm](https://user-images.githubusercontent.com/84433857/143679574-df43da97-f773-4885-a3f4-9b7e2812e929.png)
 
+[!Code](./assets/img/video.gif)
+
+![Screen Shot 2021-11-27 at 9 36 10 pm](https://user-images.githubusercontent.com/84433857/143679574-df43da97-f773-4885-a3f4-9b7e2812e929.png)
 
 
 
