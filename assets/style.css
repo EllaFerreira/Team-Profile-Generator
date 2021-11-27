@@ -54,6 +54,10 @@ h2 {
   color: #1e6091;
 }
 
+p {
+  font-size: 20px;
+}
+
 .columns {
   height: 200px;
   margin: 10px;
@@ -63,6 +67,13 @@ h2 {
 
 .list-group-items {
   font-size: 18px;
+}
+
+.column {
+  display: inline-block;
+  flex-basis: 0;
+  padding: 2.75rem;
+  background: tomato;
 }
 @media screen and (max-width: 1300px) {
   main {
