@@ -270,7 +270,7 @@ function writeToFile(fileName, data) {
     } else {
       return console.log(
         "\x1b[32m",
-        "\n------Your Team Profile was successfully generated!"
+        "\n------Your Team Profile was successfully generated!------"
       );
     }
   });

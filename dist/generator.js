@@ -9,42 +9,43 @@ function renderCards(teamMembers) {
     var role = teamMembers[i].role;
 
     let card = `
-    <div class="columns is-centered" style="padding: 2rem">
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                                  <p class="title is-4">${name}</p>
-                                    <p class="subtitle is-6">${role}</p>
-                                  <div class="content">
-                                <ul>
-                                <li class="list-group-item"><span>Employee ID: </span>${id}</li>
-                                <li class="list-group-item"><span>Email: </span><a href="mailto:${email}">${email}</a></li>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
+<div class="columns is-mobile" >
+  <div class="card">
+        <p class="title is-6">${name}</p>
+          <p class="subtitle is-4">${role}</p>
+            <div class="card-content">
+          <ul>
+        <li class="list-group-item"><span>Employee ID: </span>${id}</li>
+      <li class="list-group-item"><span>Email: </span><a href="mailto:${email}">${email}</a></li>\n`;
 
     //adding if statements to be able to display the right card for the right role
 
-    if (role === "Manager") {
-      card +=
-        -`<li class="list-items"><span>Office Number: </span>${teamMembers[i].office}</li>
-              </ul>
-              `;
-    }
-    if (role === "Enginner") {
-      card +=
-        -`<li class="list-items"><span>GitHub: </span><a href='https://github.com/${teamMembers[i].gitHub}' target='_blank'></li>
-              </ul>
-              `;
-    }
-    if (role === "Intern") {
-      card +=
-        -`<li class="list-items"><span>School: </span>${teamMembers[i].school}</li>
-              </ul>
-              `;
-    }
+if (role === "Manager") {
+      card += ` <li class="list-items"><span>Office Number: </span>${teamMembers[i].office}</li>
+      </ul>
+      </div>
+    </div>
+  </div> `;
+    
+}
+
+if (role === "Enginner") {
+      card += ` <li class="list-items"><span>GitHub: </span><a href='https://github.com/${teamMembers[i].gitHub}' target='_blank'></a></li>
+      </ul>
+    </div>
+    </div>
+  </div>`;
+    
+}
+
+if (role === "Intern") {
+      card += `<li class="list-items"><span>School: </span>${teamMembers[i].school}</li>
+      </ul>
+      </div>
+      </div>
+  </div> `;
+    
+}
 
     AllCards.push(card);
   }

@@ -67,7 +67,7 @@ h2{
     grid-template-columns: auto auto;
     row-gap: 1rem;
 }
-.list-items{
+.list-group-items{
     font-size: 18px;
     
 }
