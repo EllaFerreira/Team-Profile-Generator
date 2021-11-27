@@ -7,7 +7,7 @@
 
 ![Nodejs](https://img.shields.io/badge/AppWith-NodeJS-green.svg)
 ![JavaScript](https://img.shields.io/badge/AppWith-ExpressJS-green.svg)
-![Framework](https://img.shields.io/badge/Framework-Bootstrap-yellow.svg)
+![Framework](https://img.shields.io/badge/Framework-Bulma-blue.svg)
 
 ## About this Project
 
