@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-body{
-    background: linear-gradient(
+body {
+  background: linear-gradient(
     -45deg,
     #d9ed92 0%,
     #b5e48c 13%,
@@ -15,13 +15,10 @@ body{
   );
   background-size: 400% 400%;
   animation: gradient 20s ease infinite;
-  /* height: 100vh; */
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 0;
-   
+  font-family: "Quicksand", sans-serif;
 }
 @keyframes gradient {
   0% {
@@ -34,69 +31,65 @@ body{
     background-position: 0%;
   }
 }
-header{
-    text-align: center;
-    
-
+header {
+  text-align: center;
 }
 main {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 70px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #e8630a;
+}
+h1 {
+  font-size: 50px;
+  color: #fff;
+}
+h2 {
+  font-size: 30px;
+  color: #1e6091;
+}
+
+.columns {
+  height: 200px;
+  margin: 10px;
+  text-align: center;
+  font-size: 1em;
+}
+
+.list-group-items {
+  font-size: 18px;
+}
+@media screen and (max-width: 1300px) {
+  main {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 887px) {
+  main {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 727px) {
+  main {
     width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 70px;
-}
-a:hover{
-    text-decoration: none;
-    color: #e8630a;
-}
-h1{
-    font-size: 50px;
-    color: #fff
-
-    
-}
-h2{
-    font-size: 30px;
+  }
+  .card {
+    width: 70% !important;
+  }
 }
 
-.card {
-    width: 30%;
-    margin-right: 20px;
-    display: inline-block;
-    margin-top: 20px;
-    grid-template-columns: auto auto;
-    row-gap: 1rem;
-}
-.list-group-items{
-    font-size: 18px;
-    
-}
-@media screen and (max-width: 1300px){
-    main {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 887px){
-    main {
-        width: 95%;
-    }
-}
-
-@media screen and (max-width: 727px){
-    main {
-        width: 60%;
-    }
-    .card {
-        width: 70%!important;
-    }
-}
-
-@media screen and (max-width: 500px){
-    main {
-        width: 90%;
-    }
-    .card {
-        width: 100%!important;
-    }
+@media screen and (max-width: 500px) {
+  main {
+    width: 90%;
+  }
+  .card {
+    width: 100% !important;
+  }
 }

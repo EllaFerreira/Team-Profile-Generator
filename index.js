@@ -4,7 +4,6 @@ const Manager = require("./lib/manager");
 const Intern = require("./lib/intern");
 const Engineer = require("./lib/engineer");
 
-
 const renderHTML = require("./dist/generator");
 const teamHeader = [];
 const teamMembers = [];
@@ -264,9 +263,9 @@ function addTeamMembers() {
 //error catch
 
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, function(error) {
+  fs.writeFile(fileName, data, function (error) {
     if (error) {
-      return console.error(error)
+      return console.error(error);
     } else {
       return console.log(
         "\x1b[32m",
